@@ -1,3 +1,11 @@
+def points(word, guess): # I have problem with counter
+    p = 0
+    for i in range(len(word)):
+        if word[i] == guess:
+            p += 1
+        else:
+            p -= 1
+
 def maskWord(state, word, guess):
     state = list(state)
     for i in range(len(word)):
@@ -29,6 +37,7 @@ while play:
     tries += 1
     state = maskWord(state, word, guess)
     print (state)
+    print("Number of points scored: ", points)
 
     if maskWord(state, word, guess) == word:
         print ('You win!')
